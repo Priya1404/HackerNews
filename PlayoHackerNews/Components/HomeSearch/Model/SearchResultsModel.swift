@@ -8,34 +8,34 @@
 import Foundation
 
 class SearchResultsResponse: Codable {
-    let hits: [NewsResults]
-    let nbHits: Int
-    let page: Int
-    let nbPages: Int
-    let hitsPerPage: Int
-    let exhaustiveNbHits: Bool
-    let query: String
-    let params: String
-    let processingTimeMS: Int
+    let hits: [NewsResults]?
+    let nbHits: Int?
+    let page: Int?
+    let nbPages: Int?
+    let hitsPerPage: Int?
+    let exhaustiveNbHits: Bool?
+    let query: String?
+    let params: String?
+    let processingTimeMS: Int?
 }
 
 class NewsResults: Codable {
-    let createdAt: String
-    let title: String
+    let createdAt: String?
+    let title: String?
     let url: String?
-    let author: String
-    let points: Int
+    let author: String?
+    let points: Int?
     let storyText: String?
     let commentText: String?
-    let numComments: Int
+    let numComments: Int?
     let storyId: String?
     let storyTitle: String?
     let storyUrl: String?
     let parentId: String?
-    let createdAtI: Int
+    let createdAtI: Int?
     let relevancyScore: Int?
-    let tags: [String]
-    let objectID: String
+    let tags: [String]?
+    let objectID: String?
     let highlightResult: HighlightResult?
     
     enum CodingKeys: String, CodingKey {
@@ -60,9 +60,9 @@ class NewsResults: Codable {
 }
 
 class HighlightResult: Codable {
-    let title: Title
-    let url: URLObject
-    let author: Author
+    let title: Title?
+    let url: URLObject?
+    let author: Author?
     let storyText: StoryText?
     
     enum CodingKeys: String, CodingKey {
@@ -74,27 +74,27 @@ class HighlightResult: Codable {
 }
 
 class Title: Codable {
-    let value: String
-    let matchLevel: String
-    let fullyHighlighted: Bool
-    let matchedWords: [String]
+    let value: String?
+    let matchLevel: String?
+    let fullyHighlighted: Bool?
+    let matchedWords: [String]?
 }
 
 class URLObject: Codable {
-    let value: String
-    let matchLevel: String
+    let value: String?
+    let matchLevel: String?
     let fullyHighlighted: Bool?
-    let matchedWords: [String]
+    let matchedWords: [String]?
 }
 
 class Author: Codable {
-    let value: String
-    let matchLevel: String
-    let matchedWords: [String?]
+    let value: String?
+    let matchLevel: String?
+    let matchedWords: [String?]?
 }
 
 class StoryText: Codable {
-    let value: String
-    let matchLevel: String
-    let matchedWords: [String?]
+    let value: String?
+    let matchLevel: String?
+    let matchedWords: [String?]?
 }

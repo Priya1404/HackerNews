@@ -29,12 +29,22 @@ class SearchViewController: UIViewController {
     func setUpTableView() {
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.isHidden = true
     }
     
     func setUpSearchController() {
         searchController.delegate = self
         searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Clear Results", style: .done, target: self, action: #selector(clearSearchResults))
+        navigationItem.rightBarButtonItem?.isEnabled = false
+    }
+    
+    @objc func clearSearchResults() {
+        resultsViewModel.dataSource = nil
+        navigationItem.rightBarButtonItem?.isEnabled = false
+        tableView.isHidden = true
+        tableView.reloadData()
     }
     
     func updateSearchResults(searchText: String, paginate: Bool = false) {
@@ -46,7 +56,9 @@ class SearchViewController: UIViewController {
             DispatchQueue.main.async {
                 self.view.dismissloader()
                 if !isFailed {
+                    self.tableView.isHidden = false
                     self.tableView.reloadData()
+                    self.navigationItem.rightBarButtonItem?.isEnabled = true
                 }
             }
         }
@@ -60,7 +72,8 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: SearchTableViewCell.self), for: indexPath) as? SearchTableViewCell {
-            cell.update(searchTitle: resultsViewModel.getResultLabel(atIndex: indexPath.row))
+            let searchResult = resultsViewModel.getResultLabel(atIndex: indexPath.row)
+            cell.update(searchTitle: searchResult.0, authorName: searchResult.1)
             return cell
         }
         return UITableViewCell()

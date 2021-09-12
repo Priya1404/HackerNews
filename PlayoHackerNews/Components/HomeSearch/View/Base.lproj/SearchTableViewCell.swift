@@ -9,7 +9,8 @@ import UIKit
 
 class SearchTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var searchResultsTitle: UILabel!
+    @IBOutlet weak var searchTitleLabel: UILabel!
+    @IBOutlet weak var authorNameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,7 +22,8 @@ class SearchTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func update(searchTitle: String) {
-        searchResultsTitle.text = searchTitle
+    func update(searchTitle: String, authorName: String) {
+        searchTitleLabel.text = "Article: \(searchTitle)"
+        authorNameLabel.text = "Author: \(authorName)"
     }
 }

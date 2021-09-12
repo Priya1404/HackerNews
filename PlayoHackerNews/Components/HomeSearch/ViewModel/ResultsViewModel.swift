@@ -14,15 +14,15 @@ class ResultsViewModel {
     let apiWorker = SearchWorker()
     
     func getNumberOfResults() -> Int {
-        return dataSource?.hits.count ?? 0
+        return dataSource?.hits?.count ?? 0
     }
     
-    func getResultLabel(atIndex index: Int) -> String {
-        return dataSource?.hits[index].title ?? ""
+    func getResultLabel(atIndex index: Int) -> (String, String) {
+        return (dataSource?.hits?[index].title ?? "", dataSource?.hits?[index].author ?? "")
     }
     
     func getResultUrl(forIndex index: Int) -> String {
-        return dataSource?.hits[index].url ?? ""
+        return dataSource?.hits?[index].url ?? ""
     }
     
     func initiateSearchCall(text: String, completion: @escaping (_ failureEncountered: Bool) -> Void) {

@@ -21,14 +21,26 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchTableViewCell" id="yJz-Z7-RNa" customClass="SearchTableViewCell" customModule="PlayoHackerNews" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="53"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="77.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yJz-Z7-RNa" id="0VG-KW-eMs">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="53"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="77.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WuS-ri-E3h">
-                                                    <rect key="frame" x="36" y="16" width="342" height="21"/>
+                                                    <rect key="frame" x="36" y="16" width="342" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="ImQ-8l-WNJ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aV-LK-1fn">
+                                                    <rect key="frame" x="36" y="41" width="342" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="qWv-AP-12m"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -36,13 +48,17 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="WuS-ri-E3h" secondAttribute="trailing" constant="16" id="0aU-Nt-jCt"/>
+                                                <constraint firstItem="6aV-LK-1fn" firstAttribute="top" secondItem="WuS-ri-E3h" secondAttribute="bottom" constant="5" id="PSE-8i-ocF"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="6aV-LK-1fn" secondAttribute="bottom" constant="5" id="PXY-lN-Ddq"/>
+                                                <constraint firstItem="6aV-LK-1fn" firstAttribute="leading" secondItem="0VG-KW-eMs" secondAttribute="leadingMargin" constant="16" id="Rvp-Zs-u8F"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="6aV-LK-1fn" secondAttribute="trailing" constant="16" id="a8O-Oc-dWH"/>
                                                 <constraint firstItem="WuS-ri-E3h" firstAttribute="leading" secondItem="0VG-KW-eMs" secondAttribute="leadingMargin" constant="16" id="f9X-UM-ifH"/>
                                                 <constraint firstItem="WuS-ri-E3h" firstAttribute="top" secondItem="0VG-KW-eMs" secondAttribute="topMargin" constant="5" id="kWf-pa-2Ua"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="WuS-ri-E3h" secondAttribute="bottom" constant="5" id="kb2-lc-W38"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="searchResultsTitle" destination="WuS-ri-E3h" id="HtN-fH-Gtw"/>
+                                            <outlet property="authorNameLabel" destination="6aV-LK-1fn" id="fi3-ip-Yyp"/>
+                                            <outlet property="searchTitleLabel" destination="WuS-ri-E3h" id="0RB-7S-c1S"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -71,8 +87,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nhe-7t-mW2" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="viq-yJ-bYU">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="viq-yJ-bYU">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
