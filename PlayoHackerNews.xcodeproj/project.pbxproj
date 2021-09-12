@@ -20,6 +20,8 @@
 		E4855E2226EE46C700966B09 /* ResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4855E2126EE46C700966B09 /* ResultsViewModel.swift */; };
 		E4855E2726EE470300966B09 /* SearchResultsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4855E2626EE470300966B09 /* SearchResultsModel.swift */; };
 		E4855E2D26EE485B00966B09 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4855E2B26EE485B00966B09 /* SearchTableViewCell.swift */; };
+		E4855E3226EE4CA100966B09 /* SearchWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4855E3126EE4CA100966B09 /* SearchWorker.swift */; };
+		E4855E3726EE4DEC00966B09 /* HNConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4855E3626EE4DEC00966B09 /* HNConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		E4855E2126EE46C700966B09 /* ResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewModel.swift; sourceTree = "<group>"; };
 		E4855E2626EE470300966B09 /* SearchResultsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsModel.swift; sourceTree = "<group>"; };
 		E4855E2C26EE485B00966B09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = Base.lproj/SearchTableViewCell.swift; sourceTree = "<group>"; };
+		E4855E3126EE4CA100966B09 /* SearchWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWorker.swift; sourceTree = "<group>"; };
+		E4855E3626EE4DEC00966B09 /* HNConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HNConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,7 @@
 			children = (
 				E4855E0526EE430700966B09 /* NetworkManager.swift */,
 				E4855E0D26EE431900966B09 /* URLManager.swift */,
+				E4855E3626EE4DEC00966B09 /* HNConstants.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 		E4855E1C26EE457100966B09 /* Worker */ = {
 			isa = PBXGroup;
 			children = (
+				E4855E3126EE4CA100966B09 /* SearchWorker.swift */,
 			);
 			path = Worker;
 			sourceTree = "<group>";
@@ -342,6 +348,8 @@
 				E4855DD126EE41F700966B09 /* AppDelegate.swift in Sources */,
 				E4855E2226EE46C700966B09 /* ResultsViewModel.swift in Sources */,
 				E4855E0E26EE431900966B09 /* URLManager.swift in Sources */,
+				E4855E3726EE4DEC00966B09 /* HNConstants.swift in Sources */,
+				E4855E3226EE4CA100966B09 /* SearchWorker.swift in Sources */,
 				E4855E2D26EE485B00966B09 /* SearchTableViewCell.swift in Sources */,
 				E4855DD326EE41F700966B09 /* SceneDelegate.swift in Sources */,
 				E4855E2726EE470300966B09 /* SearchResultsModel.swift in Sources */,

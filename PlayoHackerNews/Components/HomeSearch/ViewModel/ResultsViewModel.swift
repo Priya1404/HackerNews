@@ -9,13 +9,37 @@ import Foundation
 
 class ResultsViewModel {
     
-    var dataSource = [NewsResults]()
+    var dataSource : SearchResultsResponse?
+    var searchText: String?
+    let apiWorker = SearchWorker()
     
     func getNumberOfResults() -> Int {
-        return dataSource.count
+        return dataSource?.hits.count ?? 0
     }
     
     func getResultLabel(atIndex index: Int) -> String {
-        return dataSource[index].title
+        return dataSource?.hits[index].title ?? ""
+    }
+    
+    func initiateSearchCall(text: String, completion: @escaping (_ failureEncountered: Bool) -> Void) {
+        var failureEncountered: Bool?
+        searchText = text
+        apiWorker.searchForNews(withText: text) { [weak self] (successResponse) in
+            guard let self = self else {
+                return
+            }
+            self.dataSource = successResponse
+            failureEncountered = false
+            if let failureEncountered = failureEncountered {
+                completion(failureEncountered)
+            }
+        } failure: {(error) in
+            print(error)
+            failureEncountered = true
+            if let failureEncountered = failureEncountered {
+                completion(failureEncountered)
+            }
+        }
+        
     }
 }

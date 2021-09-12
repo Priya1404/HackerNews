@@ -9,6 +9,8 @@ import UIKit
 
 class SearchTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var searchResultsTitle: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -18,5 +20,8 @@ class SearchTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
     }
-
+    
+    func update(searchTitle: String) {
+        searchResultsTitle.text = searchTitle
+    }
 }
