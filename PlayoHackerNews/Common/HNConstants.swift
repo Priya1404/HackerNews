@@ -7,10 +7,12 @@
 
 import Foundation
 
+/// HackerNews Constants
 struct HNConstants {
     
     struct Titles {
         static let searchTitle = "Search Hacker News"
+        static let clearResultsTitle = "Clear Results"
     }
     
     struct StoryBoardIDs {

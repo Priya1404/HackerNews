@@ -26,6 +26,8 @@
 		E4855E4926EE57F800966B09 /* ResultViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4855E4826EE57F800966B09 /* ResultViewViewController.swift */; };
 		E4855E5626EE586A00966B09 /* SearchResults.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4855E5526EE586A00966B09 /* SearchResults.storyboard */; };
 		E4855E5B26EE591500966B09 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4855E5A26EE591500966B09 /* UIViewController+Extension.swift */; };
+		E4855E6026EE631500966B09 /* PlayoSearchWorkerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4855E5F26EE631500966B09 /* PlayoSearchWorkerUnitTests.swift */; };
+		E4855E6826EE699B00966B09 /* SearchTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4855E6726EE699B00966B09 /* SearchTableViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		E4855E4826EE57F800966B09 /* ResultViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewViewController.swift; sourceTree = "<group>"; };
 		E4855E5526EE586A00966B09 /* SearchResults.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchResults.storyboard; sourceTree = "<group>"; };
 		E4855E5A26EE591500966B09 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		E4855E5F26EE631500966B09 /* PlayoSearchWorkerUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayoSearchWorkerUnitTests.swift; sourceTree = "<group>"; };
+		E4855E6726EE699B00966B09 /* SearchTableViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +139,7 @@
 		E4855DE626EE41F900966B09 /* PlayoHackerNewsTests */ = {
 			isa = PBXGroup;
 			children = (
+				E4855E5F26EE631500966B09 /* PlayoSearchWorkerUnitTests.swift */,
 				E4855DE726EE41F900966B09 /* PlayoHackerNewsTests.swift */,
 				E4855DE926EE41F900966B09 /* Info.plist */,
 			);
@@ -194,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				E4855E2126EE46C700966B09 /* ResultsViewModel.swift */,
+				E4855E6726EE699B00966B09 /* SearchTableViewViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -388,6 +394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4855E6826EE699B00966B09 /* SearchTableViewViewModel.swift in Sources */,
 				E4855E3D26EE519600966B09 /* UIView+Extension.swift in Sources */,
 				E4855E5B26EE591500966B09 /* UIViewController+Extension.swift in Sources */,
 				E4855E0626EE430700966B09 /* NetworkManager.swift in Sources */,
@@ -408,6 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4855E6026EE631500966B09 /* PlayoSearchWorkerUnitTests.swift in Sources */,
 				E4855DE826EE41F900966B09 /* PlayoHackerNewsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

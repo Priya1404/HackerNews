@@ -10,6 +10,12 @@ import UIKit
 
 extension UIView {
     
+    /// function to start activity indicator
+    ///
+    /// - Parameters:
+    ///   - activityIndicatorStyle: style of indicator
+    ///   - onTopOf: View on top of which the indicator has to be shown
+    ///   - withYOffest: CGFloat
     func showLoader(_ activityIndicatorStyle: UIActivityIndicatorView.Style = .medium, onTopOf : UIView? = nil, withYOffest : CGFloat = -24){
         var frameView = self
         if let onTopOf = onTopOf{
@@ -28,6 +34,7 @@ extension UIView {
         }
     }
     
+    /// function to dismiss activity indicator
     func dismissloader(){
         self.isUserInteractionEnabled = true
         if let  activityIndicator = self.viewWithTag(12345) as? UIActivityIndicatorView{

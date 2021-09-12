@@ -9,12 +9,14 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
+    //MARK:- IBOutlets
     @IBOutlet weak var tableView: UITableView!
     
+    //MARK:- Properties
     let searchController = UISearchController(searchResultsController: nil)
-
     var resultsViewModel = ResultsViewModel()
     
+    //MARK:- ViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
@@ -22,24 +24,32 @@ class SearchViewController: UIViewController {
         setUpTableView()
     }
     
+    //MARK:- Set up UI
     func setUpUI() {
         title = HNConstants.Titles.searchTitle
     }
 
+    //MARK:- SetUpTableView
     func setUpTableView() {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.isHidden = true
     }
     
+    //MARK:- Set up SearchController
     func setUpSearchController() {
         searchController.delegate = self
         searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Clear Results", style: .done, target: self, action: #selector(clearSearchResults))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: HNConstants.Titles.clearResultsTitle, style: .done, target: self, action: #selector(clearSearchResults))
         navigationItem.rightBarButtonItem?.isEnabled = false
     }
     
+    ///Clears the search results
+    ///
+    ///   - reset the data source to empty
+    ///    - hide the empty tableView
+    ///     -- reload to display the updated results
     @objc func clearSearchResults() {
         resultsViewModel.dataSource = []
         navigationItem.rightBarButtonItem?.isEnabled = false
@@ -47,6 +57,11 @@ class SearchViewController: UIViewController {
         tableView.reloadData()
     }
     
+    /// Updates the Search results list
+    ///
+    /// - Parameters:
+    ///   - searchText: text to be searched
+    ///   - paginate: to start pagination
     func updateSearchResults(searchText: String, paginate: Bool = false) {
         self.view.showLoader()
         resultsViewModel.initiateSearchCall(text: searchText, paginate: paginate) { [weak self] (isFailed) in
@@ -65,7 +80,9 @@ class SearchViewController: UIViewController {
     }
 }
 
+//MARK:- TableView Delegate methods
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return resultsViewModel.getNumberOfResults()
     }
@@ -96,8 +113,10 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+//MARK:- UISearchControllerDelegate confirmance
 extension SearchViewController: UISearchControllerDelegate {}
 
+//MARK:- UISearchResultsUpdating delegate methods
 extension SearchViewController: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {

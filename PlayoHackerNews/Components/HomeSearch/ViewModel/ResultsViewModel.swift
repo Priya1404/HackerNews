@@ -9,12 +9,14 @@ import Foundation
 
 class ResultsViewModel {
     
+    //MARK:- Properties
     var dataSource = [NewsResults]()
     var searchText: String?
     let apiWorker = SearchWorker()
     var isPaginating = false
     var pageNumber = 0
     
+    //MARK:- Getter Methods
     func getNumberOfResults() -> Int {
         return dataSource.count
     }
@@ -27,6 +29,14 @@ class ResultsViewModel {
         return dataSource[index].url ?? ""
     }
     
+    //MARK:- API Call
+    
+    /// initiate the Search api
+    ///
+    /// - Parameters:
+    ///   - text: text to be searched
+    ///   - paginate: to start pagination
+    ///   - completion: code block to be executed later
     func initiateSearchCall(text: String, paginate: Bool, completion: @escaping (_ failureEncountered: Bool) -> Void) {
         var failureEncountered: Bool?
         searchText = text

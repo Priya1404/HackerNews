@@ -9,8 +9,16 @@ import Foundation
 
 class NetworkManager {
     
+    //MARK:- Singleton Instance
     static let sharedInstance = NetworkManager()
+    private init() {}
     
+    ///Request method to fetch api response
+    ///
+    /// - Parameters:
+    ///   - url: String
+    ///   - success: @escaping (Model) -> Void
+    ///   - failure: @escaping (Error) -> Void
     func request <Model: Codable> (url: String, success: @escaping (Model) -> Void, failure: @escaping (Error) -> Void) {
         guard let uRL = URL(string: url) else {
             return
