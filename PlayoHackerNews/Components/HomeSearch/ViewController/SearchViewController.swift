@@ -41,7 +41,7 @@ class SearchViewController: UIViewController {
     }
     
     @objc func clearSearchResults() {
-        resultsViewModel.dataSource = nil
+        resultsViewModel.dataSource = []
         navigationItem.rightBarButtonItem?.isEnabled = false
         tableView.isHidden = true
         tableView.reloadData()
@@ -49,7 +49,7 @@ class SearchViewController: UIViewController {
     
     func updateSearchResults(searchText: String, paginate: Bool = false) {
         self.view.showLoader()
-        resultsViewModel.initiateSearchCall(text: searchText) { [weak self] (isFailed) in
+        resultsViewModel.initiateSearchCall(text: searchText, paginate: paginate) { [weak self] (isFailed) in
             guard let self = self else {
                 return
             }
@@ -83,6 +83,15 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         if let viewController = ResultViewViewController.getComponentViewController() as? ResultViewViewController {
             viewController.url = resultsViewModel.getResultUrl(forIndex: indexPath.row)
             self.navigationController?.pushViewController(viewController, animated: true)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == resultsViewModel.getNumberOfResults() - 5 {
+            guard let text = searchController.searchBar.text else {
+                return
+            }
+        updateSearchResults(searchText: text, paginate: true)
         }
     }
 }

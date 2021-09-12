@@ -9,12 +9,13 @@ import Foundation
 
 class SearchWorker {
     
-    func searchForNews(withText text: String, success: @escaping (SearchResultsResponse) -> Void, failure: @escaping (Error) -> Void) {
+    func searchForNews(withText text: String, pageNumber: Int, success: @escaping (SearchResultsResponse) -> Void, failure: @escaping (Error) -> Void) {
         let apiEndPoint = URLManager.sharedInstance.getApiURLForType(apiType: .searchText)
         guard var urlComponents = URLComponents(string: apiEndPoint) else {
             return
         }
-        urlComponents.queryItems = [URLQueryItem(name: "query", value: text)]
+        urlComponents.queryItems = [URLQueryItem(name: "query", value: text),
+                                    URLQueryItem(name: "page", value: "\(pageNumber)")]
         guard let urlString = urlComponents.url?.absoluteString else {
             return
         }
