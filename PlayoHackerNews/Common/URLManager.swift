@@ -14,7 +14,7 @@ class URLManager {
     private let BASEURL = Bundle.main.infoDictionary?["MY_API_BASE_URL_ENDPOINT"] as? String ?? "https://hn.algolia.com/"
 
     enum APIType: String {
-        case searchText = "api/v1/search?query=<%@>"
+        case searchText = "api/v1/search"
     }
     
     public func getApiURLForType(apiType : APIType) -> String{

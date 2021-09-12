@@ -38,11 +38,13 @@ class SearchViewController: UIViewController {
     }
     
     func updateSearchResults(searchText: String, paginate: Bool = false) {
+        self.view.showLoader()
         resultsViewModel.initiateSearchCall(text: searchText) { [weak self] (isFailed) in
             guard let self = self else {
                 return
             }
             DispatchQueue.main.async {
+                self.view.dismissloader()
                 if !isFailed {
                     self.tableView.reloadData()
                 }
@@ -58,12 +60,11 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: SearchTableViewCell.self), for: indexPath) as? SearchTableViewCell {
-            cell.textLabel?.text = resultsViewModel.getResultLabel(atIndex: indexPath.row)
+            cell.update(searchTitle: resultsViewModel.getResultLabel(atIndex: indexPath.row))
+            return cell
         }
         return UITableViewCell()
     }
-    
-    
 }
 
 extension SearchViewController: UISearchControllerDelegate {}

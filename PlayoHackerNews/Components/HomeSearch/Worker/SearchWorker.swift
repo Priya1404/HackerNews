@@ -10,10 +10,11 @@ import Foundation
 class SearchWorker {
     
     func searchForNews(withText text: String, success: @escaping (SearchResultsResponse) -> Void, failure: @escaping (Error) -> Void) {
-        let apiEndPoint = String(format: URLManager.sharedInstance.getApiURLForType(apiType: .searchText), text)
-        guard let urlComponents = URLComponents(string: apiEndPoint) else {
+        let apiEndPoint = URLManager.sharedInstance.getApiURLForType(apiType: .searchText)
+        guard var urlComponents = URLComponents(string: apiEndPoint) else {
             return
         }
+        urlComponents.queryItems = [URLQueryItem(name: "query", value: text)]
         guard let urlString = urlComponents.url?.absoluteString else {
             return
         }

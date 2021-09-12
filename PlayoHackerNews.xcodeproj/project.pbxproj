@@ -22,6 +22,7 @@
 		E4855E2D26EE485B00966B09 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4855E2B26EE485B00966B09 /* SearchTableViewCell.swift */; };
 		E4855E3226EE4CA100966B09 /* SearchWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4855E3126EE4CA100966B09 /* SearchWorker.swift */; };
 		E4855E3726EE4DEC00966B09 /* HNConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4855E3626EE4DEC00966B09 /* HNConstants.swift */; };
+		E4855E3D26EE519600966B09 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4855E3C26EE519600966B09 /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		E4855E2C26EE485B00966B09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = Base.lproj/SearchTableViewCell.swift; sourceTree = "<group>"; };
 		E4855E3126EE4CA100966B09 /* SearchWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWorker.swift; sourceTree = "<group>"; };
 		E4855E3626EE4DEC00966B09 /* HNConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HNConstants.swift; sourceTree = "<group>"; };
+		E4855E3C26EE519600966B09 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 		E4855E0326EE42EF00966B09 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				E4855E3B26EE518700966B09 /* Extensions */,
 				E4855E0526EE430700966B09 /* NetworkManager.swift */,
 				E4855E0D26EE431900966B09 /* URLManager.swift */,
 				E4855E3626EE4DEC00966B09 /* HNConstants.swift */,
@@ -211,6 +214,14 @@
 				E4855E2626EE470300966B09 /* SearchResultsModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E4855E3B26EE518700966B09 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E4855E3C26EE519600966B09 /* UIView+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4855E3D26EE519600966B09 /* UIView+Extension.swift in Sources */,
 				E4855E0626EE430700966B09 /* NetworkManager.swift in Sources */,
 				E4855DD526EE41F700966B09 /* SearchViewController.swift in Sources */,
 				E4855DD126EE41F700966B09 /* AppDelegate.swift in Sources */,
