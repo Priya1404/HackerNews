@@ -21,6 +21,10 @@ class ResultsViewModel {
         return dataSource?.hits[index].title ?? ""
     }
     
+    func getResultUrl(forIndex index: Int) -> String {
+        return dataSource?.hits[index].url ?? ""
+    }
+    
     func initiateSearchCall(text: String, completion: @escaping (_ failureEncountered: Bool) -> Void) {
         var failureEncountered: Bool?
         searchText = text

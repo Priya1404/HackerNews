@@ -23,6 +23,9 @@
 		E4855E3226EE4CA100966B09 /* SearchWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4855E3126EE4CA100966B09 /* SearchWorker.swift */; };
 		E4855E3726EE4DEC00966B09 /* HNConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4855E3626EE4DEC00966B09 /* HNConstants.swift */; };
 		E4855E3D26EE519600966B09 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4855E3C26EE519600966B09 /* UIView+Extension.swift */; };
+		E4855E4926EE57F800966B09 /* ResultViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4855E4826EE57F800966B09 /* ResultViewViewController.swift */; };
+		E4855E5626EE586A00966B09 /* SearchResults.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4855E5526EE586A00966B09 /* SearchResults.storyboard */; };
+		E4855E5B26EE591500966B09 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4855E5A26EE591500966B09 /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,9 @@
 		E4855E3126EE4CA100966B09 /* SearchWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWorker.swift; sourceTree = "<group>"; };
 		E4855E3626EE4DEC00966B09 /* HNConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HNConstants.swift; sourceTree = "<group>"; };
 		E4855E3C26EE519600966B09 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		E4855E4826EE57F800966B09 /* ResultViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewViewController.swift; sourceTree = "<group>"; };
+		E4855E5526EE586A00966B09 /* SearchResults.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchResults.storyboard; sourceTree = "<group>"; };
+		E4855E5A26EE591500966B09 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +164,7 @@
 		E4855E0426EE42F500966B09 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E4855E4726EE57C600966B09 /* ResultView */,
 				E4855E1826EE454A00966B09 /* HomeSearch */,
 			);
 			path = Components;
@@ -220,8 +227,34 @@
 			isa = PBXGroup;
 			children = (
 				E4855E3C26EE519600966B09 /* UIView+Extension.swift */,
+				E4855E5A26EE591500966B09 /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E4855E4726EE57C600966B09 /* ResultView */ = {
+			isa = PBXGroup;
+			children = (
+				E4855E5426EE580A00966B09 /* View */,
+				E4855E5026EE580000966B09 /* ViewController */,
+			);
+			path = ResultView;
+			sourceTree = "<group>";
+		};
+		E4855E5026EE580000966B09 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E4855E4826EE57F800966B09 /* ResultViewViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		E4855E5426EE580A00966B09 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E4855E5526EE586A00966B09 /* SearchResults.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,6 +363,7 @@
 				E4855DDD26EE41F900966B09 /* LaunchScreen.storyboard in Resources */,
 				E4855DDA26EE41F900966B09 /* Assets.xcassets in Resources */,
 				E4855DD826EE41F700966B09 /* MainSearch.storyboard in Resources */,
+				E4855E5626EE586A00966B09 /* SearchResults.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,11 +389,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4855E3D26EE519600966B09 /* UIView+Extension.swift in Sources */,
+				E4855E5B26EE591500966B09 /* UIViewController+Extension.swift in Sources */,
 				E4855E0626EE430700966B09 /* NetworkManager.swift in Sources */,
 				E4855DD526EE41F700966B09 /* SearchViewController.swift in Sources */,
 				E4855DD126EE41F700966B09 /* AppDelegate.swift in Sources */,
 				E4855E2226EE46C700966B09 /* ResultsViewModel.swift in Sources */,
 				E4855E0E26EE431900966B09 /* URLManager.swift in Sources */,
+				E4855E4926EE57F800966B09 /* ResultViewViewController.swift in Sources */,
 				E4855E3726EE4DEC00966B09 /* HNConstants.swift in Sources */,
 				E4855E3226EE4CA100966B09 /* SearchWorker.swift in Sources */,
 				E4855E2D26EE485B00966B09 /* SearchTableViewCell.swift in Sources */,

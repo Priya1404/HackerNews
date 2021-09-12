@@ -65,6 +65,13 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return UITableViewCell()
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let viewController = ResultViewViewController.getComponentViewController() as? ResultViewViewController {
+            viewController.url = resultsViewModel.getResultUrl(forIndex: indexPath.row)
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }
+    }
 }
 
 extension SearchViewController: UISearchControllerDelegate {}

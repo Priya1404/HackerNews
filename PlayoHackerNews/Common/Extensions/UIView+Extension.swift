@@ -15,6 +15,7 @@ extension UIView {
         if let onTopOf = onTopOf{
             frameView = onTopOf
         }
+        //Assuming a unique random value for view with tag initialisation
         if self.viewWithTag(12345) == nil{
             //Make sure multiple activityIndicators are not added to the same view
             self.isUserInteractionEnabled = false

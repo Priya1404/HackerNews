@@ -12,4 +12,9 @@ struct HNConstants {
     struct Titles {
         static let searchTitle = "Search Hacker News"
     }
+    
+    struct StoryBoardIDs {
+        static let search = "MainSearch"
+        static let searchResults = "SearchResults"
+    }
 }
